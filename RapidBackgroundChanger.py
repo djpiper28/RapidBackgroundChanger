@@ -1,5 +1,6 @@
 import win32api, win32con, win32gui
-import keyboard
+import keyboard 
+import platform
 from tkinter import *
 from tkinter import Menu
 from tkinter import messagebox
@@ -17,29 +18,20 @@ def Email():
 def start():
     running = True
     while running:
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img100.jpg'
-            setWallpaper(path)
-
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img101.jpg'
-            setWallpaper(path)
-
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img105.jpg'
-            setWallpaper(path)
-
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img102.jpg'
-            setWallpaper(path)
-
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img103.jpg'
-            setWallpaper(path)
-
-        if __name__ == "__main__":
-            path = r'C:\Windows\Web\Screen\img104.jpg'
-            setWallpaper(path)
+        os = platform.release()
+        if __name__ == "__main__" and os == "10":
+            i = 0
+            while(i<=5):
+                path = r'C:\Windows\Web\Screen\img10"+inttostr(i)+".jpg'
+                setWallpaper(path)
+                i+=1
+        elif __name__ == "__main__" and os == "7":
+            i = 0
+            while(i<=5):
+                #change the path for windows 7
+                path = r'C:\Windows\Web\Screen\img10"+inttostr(i)+".jpg'
+                setWallpaper(path)
+                i+=1
 
         if keyboard.is_pressed('c'):
             break
